@@ -1,0 +1,23 @@
+{
+  "name": "ai-agents-skills",
+  "plugins": [
+    {
+      "name": "ai-agents-skills",
+      "source": "./",
+      "version": "0.1.0",
+      "description": "Reusable skills for AI coding agents — installable via skills.sh, ZCode, Codex, and Claude Code.",
+      "author": {
+        "name": "avitamin",
+        "url": "https://github.com/avitamin"
+      },
+      "category": "productivity",
+      "keywords": [
+        "skills",
+        "agent-skills",
+        "zcode",
+        "codex",
+        "claude-code"
+      ]
+    }
+  ]
+}

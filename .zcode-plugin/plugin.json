@@ -1,0 +1,10 @@
+{
+  "name": "ai-agents-skills",
+  "version": "0.1.0",
+  "description": "Reusable skills for AI coding agents.",
+  "author": {
+    "name": "avitamin",
+    "url": "https://github.com/avitamin"
+  },
+  "skills": "skills"
+}
