@@ -8,6 +8,7 @@ One repository, three consumption paths: the [skills.sh](https://skills.sh) pack
 
 | Name | Description |
 | --- | --- |
+| [`code-review`](skills/code-review/SKILL.md) | Two-axis review of changes since a fixed point — Standards and Spec — run by parallel sub-agents, reported side by side with inline code comments. |
 | [`example`](skills/example/SKILL.md) | Template and conventions for skills in this repository. |
 
 ## Install
