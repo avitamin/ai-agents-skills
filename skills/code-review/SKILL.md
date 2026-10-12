@@ -186,9 +186,11 @@ question but doesn't cancel a proven technical risk.
 
 Sub-agents start with a fresh context — nothing from this conversation is
 visible to them — so every prompt must be fully self-contained. Send
-**two sub-agent tool calls (`general-purpose`) in a single message** —
-`Agent` in ZCode, `Task` in Claude Code, `subagent` in OpenCode — so they
-run concurrently. Shape each prompt along the task-input structure coding
+**two sub-agent tool calls in a single message** so they run concurrently.
+In OpenCode 2, use the `subagent` tool with the built-in agent ID `general`.
+In other clients, use the available delegation tool and general-purpose
+agent according to the tool's advertised schema.
+Shape each prompt along the task-input structure coding
 agents follow best — Goal / Context / Constraints / Done when — for
 example:
 
@@ -241,9 +243,10 @@ verbatim or lightly cleaned. Do **not** merge or rerank findings, because
 the two axes are deliberately separate (see _Why two axes_).
 
 Before publishing, filter findings against the counterexamples in
-[`references/calibration.md`](references/calibration.md): a justified
-adapter, an explained decision, or mere similarity must not survive as a
-finding.
+[`references/calibration.md`](references/calibration.md). Exclude findings
+based only on a justified adapter, an explained decision, or mere similarity.
+An explanation closes a missing-justification finding; it does not remove
+an independently proven defect or technical risk.
 
 Then attach every finding that has a `file:line` anchor inline with the
 client's inline-review mechanism, one comment per finding, so the review

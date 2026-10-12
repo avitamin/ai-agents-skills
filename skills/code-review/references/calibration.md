@@ -104,6 +104,13 @@ Counterexample: a design note already explains that the second
 representation is a fully rebuildable cache with a named owner. The
 absence of an `ADR-001.md` file proves nothing.
 
+Explained decision with a defect: a design note justifies a second store
+for offline reads, but the update path commits to the primary store before
+writing to the second. If the second write fails, offline readers retain
+the old state with no retry or reconciliation mechanism. Keep the finding
+about this concrete divergence path; omit the claim that the second store
+has no rationale. An explanation does not resolve the defect.
+
 ## Incomplete context
 
 Material: a wrapper's signature is visible, but the external contract that
