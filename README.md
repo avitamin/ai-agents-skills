@@ -1,3 +1,5 @@
+<!-- GENERATED FILE — README.md is rendered from templates/README.md by scripts/update_docs.py. Edit the template, not README.md, then regenerate. -->
+
 # AI Agent Skills
 
 A collection of reusable [agent skills](https://github.com/vercel-labs/skills) — portable `SKILL.md` instruction packages that extend what AI coding agents can do.
@@ -8,8 +10,8 @@ One repository, three consumption paths: the [skills.sh](https://skills.sh) pack
 
 | Name | Description |
 | --- | --- |
-| [`ai-docs-review`](skills/ai-docs-review/SKILL.md) | Review project documentation through four independent sub-agents covering decisions, contracts, requirements and implementation plans; verify and consolidate findings into one report without editing reviewed materials, with an explicit single-agent fallback. |
-| [`code-review`](skills/code-review/SKILL.md) | Two-axis review of changes since a fixed point — Standards (repo standards, code smells, unjustified complexity, architectural risks) and Spec (issue/spec/docs fidelity) — run by parallel sub-agents, reported side by side with inline code comments; also augments a host's native `/review` in criteria-only mode. |
+| [`ai-docs-review`](skills/ai-docs-review/SKILL.md) | Review AI-generated project documentation, PRDs, specifications, architecture and implementation plans through four independent review planes coordinated into one verified report. |
+| [`code-review`](skills/code-review/SKILL.md) | Two-axis review of changes since a fixed point (commit, branch, tag, or merge-base): Standards (documented repo standards plus a fixed baseline of code smells, unjustified complexity, repository-convention breaks, and architectural risks) and Spec (does the code faithfully implement the originating issue, spec, or documentation?). |
 | [`example`](skills/example/SKILL.md) | Template and conventions for skills in this repository. |
 
 ## Install
@@ -58,6 +60,10 @@ claude plugin install ai-agents-skills@ai-agents-skills
 ```
 ai-agents-skills/
 ├── skills/<name>/SKILL.md             # the skills themselves — single source of truth
+├── scripts/
+│   └── update_docs.py                 # regenerates README.md from the template + skill frontmatter
+├── templates/
+│   └── README.md                      # README template — the editable source of README.md
 ├── .claude-plugin/
 │   ├── marketplace.json               # marketplace catalog: ZCode + Claude Code (+ Codex legacy path)
 │   └── plugin.json                    # plugin manifest: ZCode + Claude Code
@@ -76,4 +82,4 @@ The whole `skills/` folder is bundled into a single plugin (`ai-agents-skills`) 
 1. Create `skills/<skill-name>/SKILL.md`. See the [`example`](skills/example/SKILL.md) skill for required frontmatter and conventions (`name` must match the folder name).
 2. Verify discovery: `npx skills add avitamin/ai-agents-skills --list` (or run it against a local clone).
 3. Bump `version` in the three plugin manifests (`.zcode-plugin/plugin.json`, `.claude-plugin/plugin.json`, `.codex-plugin/plugin.json`) so plugin managers detect the update.
-4. Add the skill to the table above.
+4. Regenerate the skills table: `python scripts/update_docs.py`. `README.md` is a generated file — edit `templates/README.md` instead of `README.md`.

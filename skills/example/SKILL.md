@@ -69,4 +69,5 @@ The same `skills/` folder is served three ways (no per-skill registration needed
 3. Test locally: `npx skills add /path/to/ai-agents-skills --list` should show it.
 4. Bump `version` in `.zcode-plugin/plugin.json`, `.claude-plugin/plugin.json`,
    and `.codex-plugin/plugin.json` so plugin managers detect the update.
-5. Add the skill to the table in the repository `README.md`.
+5. Regenerate the skills table: run `python scripts/update_docs.py` from the
+   repository root (`README.md` is generated from `templates/README.md`).
