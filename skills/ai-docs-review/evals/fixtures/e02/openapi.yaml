@@ -1,0 +1,31 @@
+openapi: 3.0.3
+info:
+  title: Catalogue
+  version: 1.0.0
+security: []
+paths:
+  /v1/items:
+    get:
+      operationId: listItems
+      responses:
+        '200':
+          description: Каталог в порядке отображения; пустой массив допустим.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  required: [id, title]
+                  properties:
+                    id:
+                      type: integer
+                    title:
+                      type: string
+              example:
+                - id: 1
+                  title: Реестр услуг
+                - id: 2
+                  title: Новости
+        default:
+          description: Ошибка загрузки каталога.

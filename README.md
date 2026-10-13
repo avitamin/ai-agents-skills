@@ -8,6 +8,7 @@ One repository, three consumption paths: the [skills.sh](https://skills.sh) pack
 
 | Name | Description |
 | --- | --- |
+| [`ai-docs-review`](skills/ai-docs-review/SKILL.md) | Review project documentation through four independent sub-agents covering decisions, contracts, requirements and implementation plans; verify and consolidate findings into one report without editing reviewed materials, with an explicit single-agent fallback. |
 | [`code-review`](skills/code-review/SKILL.md) | Two-axis review of changes since a fixed point — Standards (repo standards, code smells, unjustified complexity, architectural risks) and Spec (issue/spec/docs fidelity) — run by parallel sub-agents, reported side by side with inline code comments; also augments a host's native `/review` in criteria-only mode. |
 | [`example`](skills/example/SKILL.md) | Template and conventions for skills in this repository. |
 
