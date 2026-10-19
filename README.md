@@ -13,6 +13,7 @@ One repository, three consumption paths: the [skills.sh](https://skills.sh) pack
 | [`ai-docs-review`](skills/ai-docs-review/SKILL.md) | Review AI-generated project documentation, PRDs, specifications, architecture and implementation plans through four independent review planes coordinated into one verified report. |
 | [`code-review`](skills/code-review/SKILL.md) | Two-axis review of changes since a fixed point (commit, branch, tag, or merge-base): Standards (documented repo standards plus a fixed baseline of code smells, unjustified complexity, repository-convention breaks, and architectural risks) and Spec (does the code faithfully implement the originating issue, spec, or documentation?). |
 | [`example`](skills/example/SKILL.md) | Template and conventions for skills in this repository. |
+| [`plan-handoff`](skills/plan-handoff/SKILL.md) | Подготовь и сохрани подробный план реализации для новой сессии или другой модели, которой недоступна история переписки. |
 
 ## Install
 
