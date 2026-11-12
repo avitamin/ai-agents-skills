@@ -14,6 +14,7 @@ One repository, three consumption paths: the [skills.sh](https://skills.sh) pack
 | [`code-review`](skills/code-review/SKILL.md) | Two-axis review of changes since a fixed point (commit, branch, tag, or merge-base): Standards (documented repo standards plus a fixed baseline of code smells, unjustified complexity, repository-convention breaks, and architectural risks) and Spec (does the code faithfully implement the originating issue, spec, or documentation?). |
 | [`example`](skills/example/SKILL.md) | Template and conventions for skills in this repository. |
 | [`plan-handoff`](skills/plan-handoff/SKILL.md) | Подготовь и сохрани подробный план реализации для новой сессии или другой модели, которой недоступна история переписки. |
+| [`review-assistant`](skills/review-assistant/SKILL.md) | Lightweight review-only second opinion on a proposed architecture, implementation approach, plan, configuration or technical decision: fragile assumptions, trade-offs, unjustified complexity (AI slop). |
 
 ## Install
 
