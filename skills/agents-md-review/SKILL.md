@@ -78,6 +78,19 @@ For substantive rules, establish:
 - whether the autonomy boundaries allow authorized work to be completed without
   unnecessary stops while respecting the project's actual constraints.
 
+Check whether the author's personal paths, locally installed skills, tools, or
+preferences have been turned into general project requirements. Verify their
+necessity and availability to intended users against project sources; their
+presence in the auditor's environment is not enough. Preserve dependencies and
+constraints deliberately adopted by the project.
+
+Establish provenance from relevant project materials and supplied author context,
+without routinely scanning home directories or requiring additional skills.
+Similar wording alone does not prove that a rule was copied from a local skill.
+State when its origin is unknown; a finding needs evidence and a concrete
+consequence. Do not import the auditor's own local rules into recommendations
+unless project evidence independently supports them.
+
 Account for deliberate local overrides and justified exceptions. Different
 wording alone does not establish a conflict. Do not treat a missing section,
 exceeding an invented line limit, or not using a particular architecture as a

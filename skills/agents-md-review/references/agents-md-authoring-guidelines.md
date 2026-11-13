@@ -11,7 +11,7 @@ Source review date: 2026-10-28. English first; full Russian translation follows.
 
 This is a reference for designing skills that create or improve `AGENTS.md` files. It is not an installed skill or an instruction file to load automatically. A future skill should inspect the target project, select relevant guidance, and produce a small set of project-specific instructions. Do not copy this entire reference into every project.
 
-The recommendations below synthesize primary documentation and first-party examples. Examples are illustrative, not commands or architecture requirements suitable for every project. The likelihood-and-impact policy is an agreed user decision policy, not a consensus attributed to the cited authors. No practice here guarantees an improvement for every project or model; effectiveness must be checked against representative tasks.
+The recommendations below synthesize primary documentation and first-party examples. Examples are illustrative, not commands or architecture requirements suitable for every project. The likelihood-and-impact policy is part of this reference's methodology, not a consensus attributed to the cited authors. No practice here guarantees an improvement for every project or model; effectiveness must be checked against representative tasks.
 
 ### Ten authoring principles
 
@@ -129,7 +129,7 @@ These are original illustrative formulations. HumanLayer supports keeping onboar
 
 ### Likelihood and impact
 
-**Status:** Agreed user policy for deciding what to recommend about discovered cases, including races. Apply it to findings, not as permission to change code.
+**Status:** This reference's policy for deciding what to recommend about discovered cases, including races. Apply it to findings, not as permission to change code.
 
 Assess two independent dimensions:
 
@@ -197,7 +197,7 @@ A future authoring skill should locate existing instructions and their owners, v
 
 Это справочник для разработки навыков, которые создают или улучшают файлы `AGENTS.md`. Он не является установленным навыком или файлом инструкций для автоматической загрузки. Будущий навык должен изучить целевой проект, выбрать применимые рекомендации и составить небольшой набор инструкций для этого проекта. Не следует целиком копировать справочник в каждый проект.
 
-Рекомендации ниже обобщают первичную документацию и примеры самих авторов и команд. Примеры иллюстративные: это не команды или архитектурные требования, подходящие любому проекту. Политика оценки вероятности и последствий согласована с пользователем и не приписывается всем перечисленным авторам. Ни одна практика здесь не гарантирует улучшения для любого проекта или модели; эффективность необходимо проверять на репрезентативных задачах.
+Рекомендации ниже обобщают первичную документацию и примеры самих авторов и команд. Примеры иллюстративные: это не команды или архитектурные требования, подходящие любому проекту. Политика оценки вероятности и последствий является частью методики этого справочника и не приписывается всем перечисленным авторам. Ни одна практика здесь не гарантирует улучшения для любого проекта или модели; эффективность необходимо проверять на репрезентативных задачах.
 
 ### Десять принципов составления инструкций
 
@@ -315,7 +315,7 @@ A future authoring skill should locate existing instructions and their owners, v
 
 ### Вероятность и тяжесть последствий
 
-**Статус:** Согласованная с пользователем политика выбора рекомендаций по найденным случаям, включая гонки состояний. Применять её к замечаниям, не трактуя как разрешение менять код.
+**Статус:** Политика этого справочника для выбора рекомендаций по найденным случаям, включая гонки состояний. Применять её к замечаниям, не трактуя как разрешение менять код.
 
 Оценивать две независимые характеристики:
 

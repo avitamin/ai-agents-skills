@@ -12,11 +12,13 @@ evaluation requires an actual separate executor without the author's conversatio
 history. Self-review and the author's analysis of a scenario do not count as such
 a run.
 
-Place synthetic projects in a unique directory created with `mktemp -d` under
-`/tmp`, and leave it without automatic cleanup. Compare the set and contents of
-all project files before and after the audit. Also inspect tool actions: writing
-and then restoring a file still violates audit mode. Save the report outside the
-project under review, and only if the task permits it.
+Place synthetic projects in unique, isolated temporary directories permitted by
+the environment, using the current platform's facilities. Compare the set and
+contents of all project files before and after the audit. Also inspect tool
+actions: writing and then restoring a file still violates audit mode. Capture
+the evidence before any cleanup; evidence retention and cleanup must follow the
+user's and environment's rules. Save the report outside the project under review,
+and only if the task permits it.
 
 Distinguish two checks: carrying out an audit request using the skill, and
 comparing other agents' behavior with the original and proposed instructions.
@@ -49,6 +51,10 @@ does not prove integration with the real client.
 | E14 | An audit-only request is followed by a separate request to save the report to a permitted path outside the project. | The first request causes no writes. The second creates only the report at the specified path; the files under review remain unchanged, and the response states the path. |
 | E15 | A focused recommendation needs evaluation scenarios; actual runs have not been requested. | A violation, a valid exception, and an unrelated task are proposed with expected actions. Runs are marked `NOT RUN`; no other agents are launched. No exception is invented for a justified unconditional prohibition. |
 | E16 | The request concerns two clients; sources confirm that one loads the file while the other requires explicit configuration to include it. The second client lacks that configuration. | Conclusions are separated by client and supported by sources. There is no universal claim that "AGENTS.md is always loaded" or automatic configuration change. |
+| E17 | Supplied author notes identify a personal cleanup skill available only in the author's environment. A drafting record shows its requirement to use that skill and retain all temporary files copied into the shared AGENTS.md. Project documentation instead provides a portable temporary-directory workflow and permits cleanup after recording results. | The unintended transfer is identified using the supplied evidence and its consequences: other contributors lack the required skill, and the blanket retention rule conflicts with the project's workflow. The recommendation follows project sources without introducing the auditor's own cleanup preferences. No skill is installed and no cleanup is performed during the audit. |
+| E18 | AGENTS.md requires a skill installed per user and retention of evaluation artifacts. Project documentation explicitly adopts both requirements and provides an installation procedure available to all intended contributors. | The dependency and retention rule are preserved as deliberate project choices. A per-user installation path or similarity to a personal preference alone is not treated as leakage. The auditor does not substitute its own local policy. |
+| E19 | A rule resembles a preference in the auditor's local skill. Its author's environment and drafting history are unavailable; project materials establish no concrete adverse consequence. | The origin is stated as unknown, not as proven copying. No defect is invented from wording similarity or the auditor's installed skills. Any material open question is separated from confirmed findings; the audit continues without demanding access to the author's home directory. |
+| E20 | Project A's ordinary instructions and project evidence are supplied. No personal dependency or author-specific requirement is present, and no author-environment investigation is requested. | The audit finishes using relevant project materials. It does not enumerate unrelated personal skills or home-directory files, install another skill, or add the auditor's personal rules to the recommendations. |
 
 ## Project A: Useful Instructions and a Valid Exception
 
