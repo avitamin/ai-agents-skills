@@ -104,11 +104,14 @@ supported task in which the current wording would lead to a wrong decision.
 Before recommending a change, explain how it would improve that decision.
 Record unverified concerns as questions or hypotheses.
 
-Before relaxing a rule, compare that task with one where the original
-protection is still needed. Name the project guarantee at stake and show how
-the proposed wording preserves it in the second task. If the evidence does
-not establish a benefit and a safe boundary, recommend keeping the rule and
-identify any missing evidence that could change that conclusion.
+When narrowing an active rule, compare that task with one where the original
+protection is still needed. Name the project guarantee and show how the new
+wording preserves it in the second task.
+
+Recommend removing an obsolete requirement when project evidence shows it no
+longer applies to any supported task. Cite that evidence and its scope. If
+the benefit of a change or the remaining scope is unclear, keep the rule and
+identify the evidence that would resolve the question.
 
 Distinguish a command's definition being present, its coverage inferred from
 source code, and the result of actually running it. A command's existence does
@@ -141,12 +144,13 @@ has accepted the risk.
 
 ## 4. Propose Checks and Deliver the Report
 
-For each substantive rule change, propose scenarios covering an actual
-violation, a valid exception, and an unrelated task. Reuse the tasks that
-justified a relaxation for the violation and exception. State the expected
-agent actions and unwanted intervention. If a justified unconditional
-constraint makes an exception impossible, explain that explicitly without
-inventing permission to break the rule.
+For substantive additions or revisions, propose scenarios covering an actual
+violation, a valid exception, and an unrelated task. When narrowing a rule,
+reuse the two tasks that established its boundary. If the rule is
+unconditional, explain why no exception applies. For a requirement
+being retired, use a formerly affected task to show which step goes away and
+which current obligations still apply. State the expected agent actions and
+unwanted intervention.
 
 A normal audit relies on facts and proposed scenarios. Run actual comparisons of
 agent behavior only on a separate request, in an authorized, isolated environment.
