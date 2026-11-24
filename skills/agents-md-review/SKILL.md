@@ -99,11 +99,16 @@ requirements without a scenario that justifies them.
 
 ## 3. Verify Findings and Choose Recommendations
 
-For each finding, identify its location in the instructions, a scenario that
-leads to a wrong decision, and supporting evidence. Check recommendations against
-the project's current state, not just how persuasive the wording sounds. Keep
-missing evidence as explicit questions or hypotheses, separate from established
-problems.
+For each finding, cite the instruction and the project evidence. Identify a
+supported task in which the current wording would lead to a wrong decision.
+Before recommending a change, explain how it would improve that decision.
+Record unverified concerns as questions or hypotheses.
+
+Before relaxing a rule, compare that task with one where the original
+protection is still needed. Name the project guarantee at stake and show how
+the proposed wording preserves it in the second task. If the evidence does
+not establish a benefit and a safe boundary, recommend keeping the rule and
+identify any missing evidence that could change that conclusion.
 
 Distinguish a command's definition being present, its coverage inferred from
 source code, and the result of actually running it. A command's existence does
@@ -111,15 +116,19 @@ not prove that it succeeds; a build, static analysis, a behavioral test, and a
 check of a running system establish different properties. Do not automatically
 run installations, hooks, or project tests to verify an instruction.
 
-Assess likelihood and impact separately, explaining the conditions and harm:
+Assess likelihood and impact separately. Explain the conditions and harm in
+each case.
 
-- recommend a fix for a credible, reachable critical consequence even when it is
-  rare or its frequency is unknown;
-- also recommend a fix for a frequent, noncritical case;
-- document a rare case with limited consequences and explicitly show the user
+- Recommend a fix for a credible, reachable critical consequence even when it is
+  rare or its frequency is unknown.
+- For a recurring, noncritical consequence, check whether the project explicitly
+  accepted that cost. If the decision's conditions still hold, keep the rule
+  and explain the trade-off. Recommend a fix for a recurring defect, including
+  one that defeats a safeguard the decision relied on.
+- Document a rare case with limited consequences and explicitly show the user
   why deferral is proposed, what is known about mitigation, and under which
-  conditions the decision should be reconsidered;
-- when evidence is insufficient, name the unknown and propose a focused check.
+  conditions the decision should be reconsidered.
+- When evidence is insufficient, name the unknown and propose a focused check.
   Uncertainty does not mean low risk.
 
 Do not invent percentages or combine likelihood and impact into a score that
@@ -132,24 +141,25 @@ has accepted the risk.
 
 ## 4. Propose Checks and Deliver the Report
 
-For each substantive rule change, propose three scenarios: an actual violation,
-a valid exception, and an unrelated task. State the expected agent actions and
-unwanted intervention. If a justified unconditional constraint makes an exception
-impossible, explain that explicitly without inventing permission to break the
-rule.
+For each substantive rule change, propose scenarios covering an actual
+violation, a valid exception, and an unrelated task. Reuse the tasks that
+justified a relaxation for the violation and exception. State the expected
+agent actions and unwanted intervention. If a justified unconditional
+constraint makes an exception impossible, explain that explicitly without
+inventing permission to break the rule.
 
 A normal audit relies on facts and proposed scenarios. Run actual comparisons of
 agent behavior only on a separate request, in an authorized, isolated environment.
 Compare the original and proposed instructions under comparable conditions and
 assess the outcome, actual actions, unnecessary changes, stops, checks, and costs.
 Shorter text, restating a rule, or a single success does not prove improved
-behavior. Evaluation scenarios for this skill are in
-[evals/cases.md](evals/cases.md); they need not be read for a normal audit.
+behavior.
 
 Report structure:
 
 1. **Conclusion and scope:** files and clients examined, and limitations that
-   affect the conclusion. If there are no confirmed problems, say so.
+   affect the conclusion. If there are no confirmed problems, say so. When
+   retaining a rule resolves the audit question, explain why.
 2. **Findings:** location, problematic rule, scenario and consequence, evidence,
    likelihood and impact, and the smallest sufficient recommendation. Include
    ready-to-use replacement wording when sufficiently justified. Show deferred

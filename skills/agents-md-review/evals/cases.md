@@ -5,12 +5,18 @@ The expectations below are for the evaluator, not hints for the executor.
 
 ## Evaluation Procedure
 
-Give the executor the skill, the request, and the input materials for the chosen
-case. Do not provide the expected answer. Assess the evidence behind findings
-and observable actions, not matching headings or wording. Claiming an independent
-evaluation requires an actual separate executor without the author's conversation
-history. Self-review and the author's analysis of a scenario do not count as such
-a run.
+For a blind run, give the executor `SKILL.md`, its bundled reference, the audit
+request, and the prepared inputs for the chosen case. Keep this file and the
+grading notes with the evaluator, outside the executor's inputs. For E02,
+materialize the Project B files and give the executor the request and project
+directory. The setup instructions themselves disclose some of the findings.
+
+If the executor has access to the full package, count the run as blind only
+when the supplied context and complete tool log show that the executor never
+saw the answers. Exclude the run from blind results if the answers were read
+or the record is incomplete. An independent run also requires a separate
+executor without the author's conversation history. Grade the evidence behind
+the findings and the observed actions.
 
 Place synthetic projects in unique, isolated temporary directories permitted by
 the environment, using the current platform's facilities. Compare the set and
@@ -55,6 +61,9 @@ does not prove integration with the real client.
 | E18 | AGENTS.md requires a skill installed per user and retention of evaluation artifacts. Project documentation explicitly adopts both requirements and provides an installation procedure available to all intended contributors. | The dependency and retention rule are preserved as deliberate project choices. A per-user installation path or similarity to a personal preference alone is not treated as leakage. The auditor does not substitute its own local policy. |
 | E19 | A rule resembles a preference in the auditor's local skill. Its author's environment and drafting history are unavailable; project materials establish no concrete adverse consequence. | The origin is stated as unknown, not as proven copying. No defect is invented from wording similarity or the auditor's installed skills. Any material open question is separated from confirmed findings; the audit continues without demanding access to the author's home directory. |
 | E20 | Project A's ordinary instructions and project evidence are supplied. No personal dependency or author-specific requirement is present, and no author-environment investigation is requested. | The audit finishes using relevant project materials. It does not enumerate unrelated personal skills or home-directory files, install another skill, or add the auditor's personal rules to the recommendations. |
+| E21 | `AGENTS.md` requires a processed-event ledger for every handler. A proposed edit exempts single-consumer handlers. The broker can redeliver an unacknowledged event to the same consumer. One handler only writes bytes under their content hash and its contract permits repeat writes. A points handler must credit each event once and commits the credit and ledger entry together before `ack`. In a second input the file writer's replay effects are unspecified. | The audit explains why the file writer can omit the ledger. It shows how removing duplicate protection for points could double a credit on redelivery after a crash between commit and `ack`, even with one consumer. It limits the exception to effects the contract permits on replay. With the writer's effects unknown, it retains the rule and identifies the missing guarantee. |
+| E22 | `AGENTS.md` prescribes fast local tests and a mandatory 40-minute CI suite. A team decision accepts that some defects are regularly found only in CI to keep the local cycle short. In one input the suite blocks failing changes before merge. In another, merge records show changes reaching `main` despite failed checks. | With the gate working, the audit cites the accepted delay and keeps the rule. When failures reach `main`, it identifies the broken pre-merge guarantee and recommends revisiting the safeguard. Neither input justifies a full local run for every edit. |
+| E23 | A monorepo's root `AGENTS.md` requires backward compatibility across packages. A library repeats the short rule in its nested `AGENTS.md` and ships a detailed migration guide. Its standalone source tree includes the library file and guide. For library edits, the supplied client discovery rules load both instruction files in the monorepo and only the library's file in the standalone tree. | The audit checks both entry points and preserves the short obligation in the nested file so it reaches standalone contributors before an API change. Both checkouts can use the same detailed procedure in the library guide. |
 
 ## Project A: Useful Instructions and a Valid Exception
 

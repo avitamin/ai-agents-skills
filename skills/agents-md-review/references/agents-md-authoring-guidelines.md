@@ -49,9 +49,9 @@ The recommendations below synthesize primary documentation and first-party examp
 
 #### 5. Give each fact one authoritative home
 
-**Why:** Duplicated requirements drift. Keep the short obligation in the instruction file and detailed procedure or rationale in its owning document. Local instructions should not repeat the root's rules. [DeepSeek: documentation standard][D-docs].
+**Why:** Copies of a detailed procedure can drift. Keep the procedure and its rationale in one authoritative document. Before removing a repeated obligation, check every supported entry point. The target client must still receive the rule before starting the work it governs. [DeepSeek: documentation standard][D-docs].
 
-**Example:** “Before changing stored record formats, follow the compatibility procedure in the persistence guide.”
+**Example:** A library is maintained both in a monorepo and as a standalone checkout. The standalone checkout lacks the monorepo's root instructions, so the library's own `AGENTS.md` also states the compatibility obligation. Both checkouts include the same guide with the detailed procedure.
 
 **Check:** Verify that the reference exists, states the promised procedure, and does not conflict with the short rule. Avoid copied code and fragile line-number references when a stable document section or symbol is sufficient.
 
@@ -139,7 +139,7 @@ Assess two independent dimensions:
 | Impact | Likelihood | Recommendation |
 | --- | --- | --- |
 | Critical, with a credible reachable scenario | Any credible likelihood, including low | Recommend a fix; low likelihood does not justify deferral. |
-| Noncritical | High; recurring in supported operation | Recommend a fix. |
+| Noncritical | High; recurring in supported operation | Keep the rule and explain the trade-off if the project explicitly accepted this cost and the decision's conditions still hold. Recommend a fix for a recurring defect, including one that defeats a safeguard the decision relied on. |
 | Noncritical, with limited consequences | Low, supported by evidence | Document the case and explicitly inform the user. |
 | Insufficient evidence to assess reachability, impact, or likelihood | Unknown or not established | State what is unknown and propose a targeted check; do not silently classify it as low risk. |
 
@@ -235,9 +235,9 @@ A future authoring skill should locate existing instructions and their owners, v
 
 #### 5. Хранить каждый факт в одном основном источнике
 
-**Зачем:** Дублируемые требования расходятся. Короткое обязательство должно оставаться в файле инструкций, а подробная процедура или обоснование — в документе, отвечающем за эту тему. Локальные инструкции не должны повторять правила корня. [DeepSeek: стандарт документации][D-docs].
+**Зачем:** Копии подробной процедуры со временем расходятся. Хранить процедуру и её обоснование в одном основном документе. Перед удалением повтора проверить каждую поддерживаемую точку входа. В каждой из них целевой клиент должен по-прежнему получать правило до начала работы, к которой оно относится. [DeepSeek: стандарт документации][D-docs].
 
-**Пример:** «Перед изменением форматов сохраняемых записей выполни процедуру проверки совместимости из руководства по хранению данных».
+**Пример:** Библиотеку поддерживают и в монорепозитории, и как отдельное дерево исходников. В отдельной поставке нет корневых инструкций монорепозитория, поэтому обязательство сохранять совместимость есть и в собственном `AGENTS.md` библиотеки. В обе поставки входит одно и то же руководство с подробной процедурой.
 
 **Проверка:** Убедиться, что ссылка существует, содержит обещанную процедуру и не противоречит короткому правилу. Не копировать код и не использовать хрупкие ссылки на номера строк, когда достаточно устойчивого раздела документа или символа.
 
@@ -325,7 +325,7 @@ A future authoring skill should locate existing instructions and their owners, v
 | Последствия | Вероятность | Рекомендация |
 | --- | --- | --- |
 | Критичные, при обоснованном достижимом сценарии | Любая обоснованная, включая низкую | Рекомендовать исправление; низкая вероятность не оправдывает отсрочку. |
-| Некритичные | Высокая; случай повторяется при поддерживаемой эксплуатации | Рекомендовать исправление. |
+| Некритичные | Высокая; случай повторяется при поддерживаемой эксплуатации | Сохранить правило и объяснить компромисс, если проект явно принял эти издержки и условия решения по-прежнему выполняются. Рекомендовать исправление повторяющегося дефекта, в том числе когда из-за него перестаёт работать защита, на которую опиралось решение. |
 | Некритичные, с ограниченными последствиями | Низкая, подтверждённая аргументами | Документировать случай и явно сообщить пользователю. |
 | Недостаточно доказательств для оценки достижимости, последствий или вероятности | Неизвестна или не установлена | Указать неизвестное и предложить прицельную проверку; не относить молча к низкому риску. |
 
