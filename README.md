@@ -10,6 +10,7 @@ One repository, three consumption paths: the [skills.sh](https://skills.sh) pack
 
 | Name | Description |
 | --- | --- |
+| [`agents-md-review`](skills/agents-md-review/SKILL.md) | Audit an existing AGENTS.md against project evidence and the target client's rules, and recommend focused improvements without modifying the files under review. |
 | [`ai-docs-review`](skills/ai-docs-review/SKILL.md) | Review AI-generated project documentation, PRDs, specifications, architecture and implementation plans through four independent review planes coordinated into one verified report. |
 | [`code-review`](skills/code-review/SKILL.md) | Two-axis review of changes since a fixed point (commit, branch, tag, or merge-base): Standards (documented repo standards plus a fixed baseline of code smells, unjustified complexity, repository-convention breaks, and architectural risks) and Spec (does the code faithfully implement the originating issue, spec, or documentation?). |
 | [`example`](skills/example/SKILL.md) | Template and conventions for skills in this repository. |
